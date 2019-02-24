@@ -13,12 +13,6 @@
       but to insert t in the array, shifting will be required which takes O(n) time
     ** We can use Binary Search Trees as step 2 and step 3 can be done in O(lg(n)) time
 """
-"""
-Invariant of BST is: for all nodes x, if y is in left subtree then key(y) < key(x)
-                     if y is in right subtree key(y) >= key(x)
-
-"""
-
 
 class Node:
     def __init__(self, key: int, parent=None, left_child=None, right_child=None):
