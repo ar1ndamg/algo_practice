@@ -12,6 +12,7 @@
     * if we use a sorted array we can find the insertion point in O(lg(n)) time,
       but to insert t in the array, shifting will be required which takes O(n) time
     ** We can use Binary Search Trees as step 2 and step 3 can be done in O(lg(n)) time
+    * Here subtree size denotes the size of the subtrees of the node including itself.
 """
 
 class Node:
@@ -23,7 +24,7 @@ class Node:
         self.subtree_size = 1
 
 
-def insert(root: Node, key: int):
+def insert(root: Node, key: int) -> (Node):
     """
     Insert a new flight time to the schedule
     """
@@ -57,7 +58,7 @@ def insert(root: Node, key: int):
     return head
 
 
-def add_to_parent_subtree_size(root: None):
+def add_to_parent_subtree_size(root: None) -> (None):
     """ 
     Recursively calls its parent to increase the subtree size by 1
     """
@@ -67,7 +68,7 @@ def add_to_parent_subtree_size(root: None):
     add_to_parent_subtree_size(root.parent)
 
 
-def flights_before_t(root: Node, t: int):
+def flights_before_t(root: Node, t: int) -> (int):
     """
     returns the number of flights that are scheduled before 't'
     """
@@ -82,7 +83,7 @@ def flights_before_t(root: Node, t: int):
     return count
 
 
-def traverse_bst_preorder(root: Node):
+def traverse_bst_preorder(root: Node) -> (None):
     """
     Preorder traversal of the BST
     """
@@ -93,7 +94,7 @@ def traverse_bst_preorder(root: Node):
     traverse_bst_preorder(root.right_child)
 
 
-def traverse_bst_inorder(root: Node):
+def traverse_bst_inorder(root: Node) -> (None):
     """
     Inorder traversal of the BST
     """
